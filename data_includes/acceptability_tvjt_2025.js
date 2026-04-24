@@ -1,4 +1,4 @@
-var shuffleSequence = seq("intro", sepWith("sep",  seq("practice")), "practiceover", sepWith("sep", rshuffle(startsWith("first-item"), startsWith("first-filler"))), "practice-two-before", seq("practice-two"), "practice-two-over", sepWith("sep", rshuffle(startsWith("second-item"), startsWith("second-filler"))));
+var shuffleSequence = seq("intro", sepWith("sep",  seq("practice")), "practiceover", sepWith("sep", rshuffle(startsWith("item"), startsWith("filler"))));
 
 var continueMessage = ["Klikni zde"];
 
@@ -15,7 +15,7 @@ var defaults = [
                    normalMessage: "Počkejte prosím na další položku v experimentu.",
                    errorMessage: "Špatně. Počkejte prosím na další položku v experimentu." 
 		 },
-    "AcceptabilityJudgment", { as: ["1", "2", "3", "4", "5"],
+    "AcceptabilityJudgment", { as: ["1", "2", "3", "4", "5", "6", "7"],
                                presentAsScale: true,
                                leftComment: "(nepřijatelná věta)", rightComment: "(věta je naprosto v pořádku)" },
     "Message", { hideProgressBar: true, transfer: "click" }
@@ -33,141 +33,101 @@ var items = [ ["sep", "Separator", { }],
 
 	      ["practiceover", "Message", {continueMessage: "Klikněte zde pro pokračování experimentu", html: ["div", ["p", "Zde končí přípravná část experimentu. Klikněte níže pro vstup do experimentu."]]}],
 
-[["first-item1-acc-all", 1], aj, {s: "Všichni návštěvníci se sebemenším zájmem o archeologii zvládli tento exponát hned poznat."}],
-[["first-item1-acc-most", 1], aj, {s: "Většina návštěvníků se sebemenším zájmem o archeologii zvládla tento exponát hned poznat."}],
-[["first-item1-acc-some", 1], aj, {s: "Někteří návštěvníci se sebemenším zájmem o archeologii zvládli tento exponát hned poznat."}],
+[["item1-pos-res", 1], aj, {s: {html: "<p>Jan je kulturní novinář a dlouhodobě píše o divadle. V rozhovoru s kamarádem pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Divadelní hry se sebemenším náznakem tragédie často mívají výrazný úspěch.</em></p>"}}],
+[["item1-pos-sco", 1], aj, {s: {html: "<p>Jan je kulturní novinář a dlouhodobě píše o divadle. V rozhovoru s kamarádem pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Divadelní hry s výrazným náznakem tragédie často mívají sebemenší úspěch.</em></p>"}}],
+[["item1-neg-res", 1], aj, {s: {html: "<p>Jan je kulturní novinář a dlouhodobě píše o divadle. V rozhovoru s kamarádem pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Divadelní hry se sebemenším náznakem tragédie často nemívají výrazný úspěch.</em></p>"}}],
+[["item1-neg-sco", 1], aj, {s: {html: "<p>Jan je kulturní novinář a dlouhodobě píše o divadle. V rozhovoru s kamarádem pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Divadelní hry s výrazným náznakem tragédie často nemívají sebemenší úspěch.</em></p>"}}],
 
-[["first-item2-acc-all", 2], aj, {s: "Všechny zákaznice se sebemenší alergií na odlakovač musely ze salonu preventivně odejít."}],
-[["first-item2-acc-most", 2], aj, {s: "Většina zákaznic se sebemenší alergií na odlakovač musela ze salonu preventivně odejít."}],
-[["first-item2-acc-some", 2], aj, {s: "Některé zákaznice se sebemenší alergií na odlakovač musely ze salonu preventivně odejít."}],
+[["item2-pos-res", 2], aj, {s: {html: "<p>Marie je literární kritička a dlouhodobě sleduje současnou prózu. V rozhovoru s kolegyní pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Romány se sebemenším náznakem sentimentu často mívají výrazný ohlas.</em></p>"}}],
+[["item2-pos-sco", 2], aj, {s: {html: "<p>Marie je literární kritička a dlouhodobě sleduje současnou prózu. V rozhovoru s kolegyní pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Romány s výrazným náznakem sentimentu často mívají sebemenší ohlas.</em></p>"}}],
+[["item2-neg-res", 2], aj, {s: {html: "<p>Marie je literární kritička a dlouhodobě sleduje současnou prózu. V rozhovoru s kolegyní pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Romány se sebemenším náznakem sentimentu často nemívají výrazný ohlas.</em></p>"}}],
+[["item2-neg-sco", 2], aj, {s: {html: "<p>Marie je literární kritička a dlouhodobě sleduje současnou prózu. V rozhovoru s kolegyní pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Romány s výrazným náznakem sentimentu často nemívají sebemenší ohlas.</em></p>"}}],
 
-[["first-item3-acc-all", 3], aj, {s: "Všichni občané se sebemenší vírou v Boha chtěli nalezenému dítěti vystrojit křest."}],
-[["first-item3-acc-most", 3], aj, {s: "Většina občanů se sebemenší vírou v Boha chtěla nalezenému dítěti vystrojit křest."}],
-[["first-item3-acc-some", 3], aj, {s: "Někteří občané se sebemenší vírou v Boha chtěli nalezenému dítěti vystrojit křest."}],
+[["item3-pos-res", 3], aj, {s: {html: "<p>Tomáš je hudební publicista a dlouhodobě recenzuje koncerty. V rozhovoru s kamarádem pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Koncerty se sebemenší stopou improvizace často mívají výraznou odezvu publika.</em></p>"}}],
+[["item3-pos-sco", 3], aj, {s: {html: "<p>Tomáš je hudební publicista a dlouhodobě recenzuje koncerty. V rozhovoru s kamarádem pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Koncerty s výraznou stopou improvizace často mívají sebemenší odezvu publika.</em></p>"}}],
+[["item3-neg-res", 3], aj, {s: {html: "<p>Tomáš je hudební publicista a dlouhodobě recenzuje koncerty. V rozhovoru s kamarádem pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Koncerty se sebemenší stopou improvizace často nemívají výraznou odezvu publika.</em></p>"}}],
+[["item3-neg-sco", 3], aj, {s: {html: "<p>Tomáš je hudební publicista a dlouhodobě recenzuje koncerty. V rozhovoru s kamarádem pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Koncerty s výraznou stopou improvizace často nemívají sebemenší odezvu publika.</em></p>"}}],
 
-[["first-item4-acc-all", 4], aj, {s: "Všechny krávy se sebemenším podezřením na slintavku dostaly kvůli nařízení smrtící ránu."}],
-[["first-item4-acc-most", 4], aj, {s: "Většina krav se sebemenším podezřením na slintavku dostala kvůli nařízení smrtící ránu."}],
-[["first-item4-acc-some", 4], aj, {s: "Některé krávy se sebemenším podezřením na slintavku dostaly kvůli nařízení smrtící ránu."}],
+[["item4-pos-res", 4], aj, {s: {html: "<p>Ondřej je gastronomický kritik a dlouhodobě navštěvuje nové podniky. V rozhovoru s kamarádkou pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Restaurace se sebemenším náznakem originality často mívají výrazný zájem hostů.</em></p>"}}],
+[["item4-pos-sco", 4], aj, {s: {html: "<p>Ondřej je gastronomický kritik a dlouhodobě navštěvuje nové podniky. V rozhovoru s kamarádkou pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Restaurace s výrazným náznakem originality často mívají sebemenší zájem hostů.</em></p>"}}],
+[["item4-neg-res", 4], aj, {s: {html: "<p>Ondřej je gastronomický kritik a dlouhodobě navštěvuje nové podniky. V rozhovoru s kamarádkou pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Restaurace se sebemenším náznakem originality často nemívají výrazný zájem hostů.</em></p>"}}],
+[["item4-neg-sco", 4], aj, {s: {html: "<p>Ondřej je gastronomický kritik a dlouhodobě navštěvuje nové podniky. V rozhovoru s kamarádkou pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Restaurace s výrazným náznakem originality často nemívají sebemenší zájem hostů.</em></p>"}}],
 
-[["first-item5-acc-all", 5], aj, {s: "Všichni starostové se sebemenším obviněním z korupce popřeli důrazně existenci své viny."}],
-[["first-item5-acc-most", 5], aj, {s: "Většina starostů se sebemenším obviněním z korupce popřela důrazně existenci své viny."}],
-[["first-item5-acc-some", 5], aj, {s: "Někteří starostové se sebemenším obviněním z korupce popřeli důrazně existenci své viny."}],
+[["item5-pos-res", 5], aj, {s: {html: "<p>Klára je sportovní komentátorka a dlouhodobě sleduje ligové soutěže. V rozhovoru s kolegou pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Týmy se sebemenší známkou nesouhry často mívají výrazný bodový zisk.</em></p>"}}],
+[["item5-pos-sco", 5], aj, {s: {html: "<p>Klára je sportovní komentátorka a dlouhodobě sleduje ligové soutěže. V rozhovoru s kolegou pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Týmy s výraznou známkou nesouhry často mívají sebemenší bodový zisk.</em></p>"}}],
+[["item5-neg-res", 5], aj, {s: {html: "<p>Klára je sportovní komentátorka a dlouhodobě sleduje ligové soutěže. V rozhovoru s kolegou pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Týmy se sebemenší známkou nesouhry často nemívají výrazný bodový zisk.</em></p>"}}],
+[["item5-neg-sco", 5], aj, {s: {html: "<p>Klára je sportovní komentátorka a dlouhodobě sleduje ligové soutěže. V rozhovoru s kolegou pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Týmy s výraznou známkou nesouhry často nemívají sebemenší bodový zisk.</em></p>"}}],
 
-[["first-item6-acc-all", 6], aj, {s: "Všechny matky se sebemenším problémem s drogami podstoupily velmi přísnou inspekci domácnosti."}],
-[["first-item6-acc-most", 6], aj, {s: "Většina matek se sebemenším problémem s drogami podstoupila velmi přísnou inspekci domácnosti."}],
-[["first-item6-acc-some", 6], aj, {s: "Některé matky se sebemenším problémem s drogami podstoupily velmi přísnou inspekci domácnosti."}],
+[["item6-pos-res", 6], aj, {s: {html: "<p>Petr pracuje jako kontrolor kvality v továrně na auta a dlouhodobě sleduje, jak se projevují vady. V rozhovoru s kolegou pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Auta se sebemenším náznakem vady často mívají viditelné poškození.</em></p>"}}],
+[["item6-pos-sco", 6], aj, {s: {html: "<p>Petr pracuje jako kontrolor kvality v továrně na auta a dlouhodobě sleduje, jak se projevují vady. V rozhovoru s kolegou pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Auta s viditelným náznakem vady často mívají sebemenší poškození.</em></p>"}}],
+[["item6-neg-res", 6], aj, {s: {html: "<p>Petr pracuje jako kontrolor kvality v továrně na auta a dlouhodobě sleduje, jak se projevují vady. V rozhovoru s kolegou pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Auta se sebemenším náznakem vady často nemívají viditelné poškození.</em></p>"}}],
+[["item6-neg-sco", 6], aj, {s: {html: "<p>Petr pracuje jako kontrolor kvality v továrně na auta a dlouhodobě sleduje, jak se projevují vady. V rozhovoru s kolegou pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Auta s viditelným náznakem vady často nemívají sebemenší poškození.</em></p>"}}],
 
-[["first-item7-acc-all", 7], aj, {s: "Všechny produkty se sebemenší závadou na obalu selhaly v testu zdravotní bezpečnosti."}],
-[["first-item7-acc-most", 7], aj, {s: "Většina produktů se sebemenší závadou na obalu selhala v testu zdravotní bezpečnosti."}],
-[["first-item7-acc-some", 7], aj, {s: "Některé produkty se sebemenší závadou na obalu selhaly v testu zdravotní bezpečnosti."}],
+[["item7-pos-res", 7], aj, {s: {html: "<p>Eva je kytaristka a dlouhodobě sleduje, jak se projevují konstrukční nedostatky na nástrojích. V rozhovoru s kolegou pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Kytary se sebemenším náznakem konstrukční vady často mívají výrazný pokles kvality zvuku.</em></p>"}}],
+[["item7-pos-sco", 7], aj, {s: {html: "<p>Eva je kytaristka a dlouhodobě sleduje, jak se projevují konstrukční nedostatky na nástrojích. V rozhovoru s kolegou pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Kytary s výrazným náznakem konstrukční vady často mívají sebemenší pokles kvality zvuku.</em></p>"}}],
+[["item7-neg-res", 7], aj, {s: {html: "<p>Eva je kytaristka a dlouhodobě sleduje, jak se projevují konstrukční nedostatky na nástrojích. V rozhovoru s kolegou pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Kytary se sebemenším náznakem konstrukční vady často nemívají výrazný pokles kvality zvuku.</em></p>"}}],
+[["item7-neg-sco", 7], aj, {s: {html: "<p>Eva je kytaristka a dlouhodobě sleduje, jak se projevují konstrukční nedostatky na nástrojích. V rozhovoru s kolegou pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Kytary s výrazným náznakem konstrukční vady často nemívají sebemenší pokles kvality zvuku.</em></p>"}}],
 
-[["first-item8-acc-all", 8], aj, {s: "Všechna koťata se sebemenším flíčkem na zádech vzešla z našeho skvrnitého kocoura."}],
-[["first-item8-acc-most", 8], aj, {s: "Většina koťat se sebemenším flíčkem na zádech vzešla z našeho skvrnitého kocoura."}],
-[["first-item8-acc-some", 8], aj, {s: "Některá koťata se sebemenším flíčkem na zádech vzešla z našeho skvrnitého kocoura."}],
+[["item8-pos-res", 8], aj, {s: {html: "<p>Martin je servisní technik a dlouhodobě sleduje, jak se projevují technické závady na fotoaparátech. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Fotoaparáty se sebemenším náznakem poruchy často mívají výrazný výpadek ostření.</em></p>"}}],
+[["item8-pos-sco", 8], aj, {s: {html: "<p>Martin je servisní technik a dlouhodobě sleduje, jak se projevují technické závady na fotoaparátech. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Fotoaparáty s výrazným náznakem poruchy často mívají sebemenší výpadek ostření.</em></p>"}}],
+[["item8-neg-res", 8], aj, {s: {html: "<p>Martin je servisní technik a dlouhodobě sleduje, jak se projevují technické závady na fotoaparátech. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Fotoaparáty se sebemenším náznakem poruchy často nemívají výrazný výpadek ostření.</em></p>"}}],
+[["item8-neg-sco", 8], aj, {s: {html: "<p>Martin je servisní technik a dlouhodobě sleduje, jak se projevují technické závady na fotoaparátech. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Fotoaparáty s výrazným náznakem poruchy často nemívají sebemenší výpadek ostření.</em></p>"}}],
 
-[["first-item9-acc-all", 9], aj, {s: "Všechny domy se sebemenší nerovností ve zdech riskovaly poškození v případě vichřice."}],
-[["first-item9-acc-most", 9], aj, {s: "Většina domů se sebemenší nerovností ve zdech riskovala poškození v případě vichřice."}],
-[["first-item9-acc-some", 9], aj, {s: "Některé domy se sebemenší nerovností ve zdech riskovaly poškození v případě vichřice."}],
+[["item9-pos-res", 9], aj, {s: {html: "<p>Jana pracuje jako biolog v zoologické zahradě a dlouhodobě sleduje, jak se projevují zdravotní problémy u zvířat. V rozhovoru s kolegyní pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Zvířata se sebemenším náznakem zdravotního problému často mívají výrazný pokles aktivity.</em></p>"}}],
+[["item9-pos-sco", 9], aj, {s: {html: "<p>Jana pracuje jako biolog v zoologické zahradě a dlouhodobě sleduje, jak se projevují zdravotní problémy u zvířat. V rozhovoru s kolegyní pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Zvířata s výrazným náznakem zdravotního problému často mívají sebemenší pokles aktivity.</em></p>"}}],
+[["item9-neg-res", 9], aj, {s: {html: "<p>Jana pracuje jako biolog v zoologické zahradě a dlouhodobě sleduje, jak se projevují zdravotní problémy u zvířat. V rozhovoru s kolegyní pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Zvířata se sebemenším náznakem zdravotního problému často nemívají výrazný pokles aktivity.</em></p>"}}],
+[["item9-neg-sco", 9], aj, {s: {html: "<p>Jana pracuje jako biolog v zoologické zahradě a dlouhodobě sleduje, jak se projevují zdravotní problémy u zvířat. V rozhovoru s kolegyní pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Zvířata s výrazným náznakem zdravotního problému často nemívají sebemenší pokles aktivity.</em></p>"}}],
 
-[["first-item10-acc-all", 10], aj, {s: "Všechna hnutí se sebemenší inklinaci ke komunismu čelila odsouzení ze strany společnosti."}],
-[["first-item10-acc-most", 10], aj, {s: "Většina hnutí se sebemenší inklinaci ke komunismu čelila odsouzení ze strany společnosti."}],
-[["first-item10-acc-some", 10], aj, {s: "Některá hnutí se sebemenší inklinaci ke komunismu čelila odsouzení ze strany společnosti."}],
+[["item10-pos-res", 10], aj, {s: {html: "<p>Petr je amatérský ornitolog a dlouhodobě sleduje, jak se projevují různá zranění u ptáků. V rozhovoru s kolegou pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Ptáci se sebemenším náznakem zranění křídla často mívají výrazné omezení letu.</em></p>"}}],
+[["item10-pos-sco", 10], aj, {s: {html: "<p>Petr je amatérský ornitolog a dlouhodobě sleduje, jak se projevují různá zranění u ptáků. V rozhovoru s kolegou pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Ptáci s výrazným náznakem zranění křídla často mívají sebemenší omezení letu.</em></p>"}}],
+[["item10-neg-res", 10], aj, {s: {html: "<p>Petr je amatérský ornitolog a dlouhodobě sleduje, jak se projevují různá zranění u ptáků. V rozhovoru s kolegou pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Ptáci se sebemenším náznakem zranění křídla často nemívají výrazné omezení letu.</em></p>"}}],
+[["item10-neg-sco", 10], aj, {s: {html: "<p>Petr je amatérský ornitolog a dlouhodobě sleduje, jak se projevují různá zranění u ptáků. V rozhovoru s kolegou pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Ptáci s výrazným náznakem zranění křídla často nemívají sebemenší omezení letu.</em></p>"}}],
 
-[["first-item11-acc-all", 11], aj, {s: "Všechny ústavy se sebemenším rozpočtem na výzkum vykázaly mnoho objevů a publikací."}],
-[["first-item11-acc-most", 11], aj, {s: "Většina ústavů se sebemenším rozpočtem na výzkum vykázala mnoho objevů a publikací."}],
-[["first-item11-acc-some", 11], aj, {s: "Některé ústavy se sebemenším rozpočtem na výzkum vykázaly mnoho objevů a publikací."}],
+[["item11-pos-res", 11], aj, {s: {html: "<p>Lucie pracuje jako veterinářka a dlouhodobě sleduje, jak se projevují trávicí obtíže u psů. V rozhovoru s kolegyní pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Psi se sebemenším náznakem trávicích obtíží často mívají výrazný pokles chuti k jídlu.</em></p>"}}],
+[["item11-pos-sco", 11], aj, {s: {html: "<p>Lucie pracuje jako veterinářka a dlouhodobě sleduje, jak se projevují trávicí obtíže u psů. V rozhovoru s kolegyní pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Psi s výrazným náznakem trávicích obtíží často mívají sebemenší pokles chuti k jídlu.</em></p>"}}],
+[["item11-neg-res", 11], aj, {s: {html: "<p>Lucie pracuje jako veterinářka a dlouhodobě sleduje, jak se projevují trávicí obtíže u psů. V rozhovoru s kolegyní pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Psi se sebemenším náznakem trávicích obtíží často nemívají výrazný pokles chuti k jídlu.</em></p>"}}],
+[["item11-neg-sco", 11], aj, {s: {html: "<p>Lucie pracuje jako veterinářka a dlouhodobě sleduje, jak se projevují trávicí obtíže u psů. V rozhovoru s kolegyní pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Psi s výrazným náznakem trávicích obtíží často nemívají sebemenší pokles chuti k jídlu.</em></p>"}}],
 
-[["first-item12-acc-all", 12], aj, {s: "Všechna vysvětlení se sebemenší nejistotou v hlase působila na tazatele příliš podezřele."}],
-[["first-item12-acc-most", 12], aj, {s: "Většina vysvětlení se sebemenší nejistotou v hlase působila na tazatele příliš podezřele."}],
-[["first-item12-acc-some", 12], aj, {s: "Některá vysvětlení se sebemenší nejistotou v hlase působila na tazatele příliš podezřele."}],
+[["item12-pos-res", 12], aj, {s: {html: "<p>Petr pracuje jako architekt a dlouhodobě sleduje vliv designu střech domů na zatékání. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Domy se sebemenším náznakem rovné střechy často mívají výrazné zatékání.</em></p>"}}],
+[["item12-pos-sco", 12], aj, {s: {html: "<p>Petr pracuje jako architekt a dlouhodobě sleduje vliv designu střech domů na zatékání. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Domy s výrazným náznakem rovné střechy často mívají sebemenší zatékání.</em></p>"}}],
+[["item12-neg-res", 12], aj, {s: {html: "<p>Petr pracuje jako architekt a dlouhodobě sleduje vliv designu střech domů na zatékání. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Domy se sebemenším náznakem rovné střechy často nemívají výrazné zatékání.</em></p>"}}],
+[["item12-neg-sco", 12], aj, {s: {html: "<p>Petr pracuje jako architekt a dlouhodobě sleduje vliv designu střech domů na zatékání. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Domy s výrazným náznakem rovné střechy často nemívají sebemenší zatékání.</em></p>"}}],
 
-[["first-item13-acc-all", 13], aj, {s: "Všechna hnutí se sebemenší inklinaci ke komunismu čelila odsouzení ze strany společnosti."}],
-[["first-item13-acc-most", 13], aj, {s: "Většina hnutí se sebemenší inklinaci ke komunismu čelila odsouzení ze strany společnosti."}],
-[["first-item13-acc-some", 13], aj, {s: "Některá hnutí se sebemenší inklinaci ke komunismu čelila odsouzení ze strany společnosti."}],
+[["item13-pos-res", 13], aj, {s: {html: "<p>Martin je lékař a dlouhodobě sleduje, jak se projevují příznaky chřipky u pacientů. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Pacienti se sebemenším náznakem chřipky často mívají závažné následky.</em></p>"}}],
+[["item13-pos-sco", 13], aj, {s: {html: "<p>Martin je lékař a dlouhodobě sleduje, jak se projevují příznaky chřipky u pacientů. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Pacienti s výrazným náznakem chřipky často mívají sebemenší následky.</em></p>"}}],
+[["item13-neg-res", 13], aj, {s: {html: "<p>Martin je lékař a dlouhodobě sleduje, jak se projevují příznaky chřipky u pacientů. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Pacienti se sebemenším náznakem chřipky často nemívají závažné následky.</em></p>"}}],
+[["item13-neg-sco", 13], aj, {s: {html: "<p>Martin je lékař a dlouhodobě sleduje, jak se projevují příznaky chřipky u pacientů. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Pacienti s výrazným náznakem chřipky často nemívají sebemenší následky.</em></p>"}}],
 
-[["first-item14-acc-all", 14], aj, {s: "Všechny ústavy se sebemenším rozpočtem na výzkum vykázaly mnoho objevů a publikací."}],
-[["first-item14-acc-most", 14], aj, {s: "Většina ústavů se sebemenším rozpočtem na výzkum vykázala mnoho objevů a publikací."}],
-[["first-item14-acc-some", 14], aj, {s: "Některé ústavy se sebemenším rozpočtem na výzkum vykázaly mnoho objevů a publikací."}],
+[["item14-pos-res", 14], aj, {s: {html: "<p>Petr pracuje v ochranné službě na letišti a dlouhodobě sleduje, jak se projevují demografické charakteristiky cestujících na jejich kontrolu. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Asiaté se sebemenším zavazadlem často mívají výraznou kontrolu.</em></p>"}}],
+[["item14-pos-sco", 14], aj, {s: {html: "<p>Petr pracuje v ochranné službě na letišti a dlouhodobě sleduje, jak se projevují demografické charakteristiky cestujících na jejich kontrolu. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Asiaté s výrazným zavazadlem často mívají sebemenší kontrolu.</em></p>"}}],
+[["item14-neg-res", 14], aj, {s: {html: "<p>Petr pracuje v ochranné službě na letišti a dlouhodobě sleduje, jak se projevují demografické charakteristiky cestujících na jejich kontrolu. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Asiaté se sebemenším zavazadlem často nemívají výraznou kontrolu.</em></p>"}}],
+[["item14-neg-sco", 14], aj, {s: {html: "<p>Petr pracuje v ochranné službě na letišti a dlouhodobě sleduje, jak se projevují demografické charakteristiky cestujících na jejich kontrolu. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Asiaté s výrazným zavazadlem často nemívají sebemenší kontrolu.</em></p>"}}],
 
-[["first-item15-acc-all", 15], aj, {s: "Všechna vysvětlení se sebemenší nejistotou v hlase působila na tazatele příliš podezřele."}],
-[["first-item15-acc-most", 15], aj, {s: "Většina vysvětlení se sebemenší nejistotou v hlase působila na tazatele příliš podezřele."}],
-[["first-item15-acc-some", 15], aj, {s: "Některá vysvětlení se sebemenší nejistotou v hlase působila na tazatele příliš podezřele."}],
+[["item15-pos-res", 15], aj, {s: {html: "<p>Martin je herní kritik a dlouhodobě sleduje, jak se projevují různé prvky násilí v hrách na jejich tržní úspěch. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Počítačové hry se sebemenším náznakem násilí často mívají výrazný prodej.</em></p>"}}],
+[["item15-pos-sco", 15], aj, {s: {html: "<p>Martin je herní kritik a dlouhodobě sleduje, jak se projevují různé prvky násilí v hrách na jejich tržní úspěch. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Počítačové hry s výrazným náznakem násilí často mívají sebemenší prodej.</em></p>"}}],
+[["item15-neg-res", 15], aj, {s: {html: "<p>Martin je herní kritik a dlouhodobě sleduje, jak se projevují různé prvky násilí v hrách na jejich tržní úspěch. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Počítačové hry se sebemenším náznakem násilí často nemívají výrazný prodej.</em></p>"}}],
+[["item15-neg-sco", 15], aj, {s: {html: "<p>Martin je herní kritik a dlouhodobě sleduje, jak se projevují různé prvky násilí v hrách na jejich tržní úspěch. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho dlouhodobou zkušenost:</p><p><em>Počítačové hry s výrazným náznakem násilí často nemívají sebemenší prodej.</em></p>"}}],
 
-[["first-item10-acc-all", 10], aj, {s: "Všechna hnutí se sebemenší inklinaci ke komunismu čelila předsudkům ze strany společnosti."}],
-[["first-item10-acc-most", 10], aj, {s: "Většina hnutí se sebemenší inklinaci ke komunismu čelila předsudkům ze strany společnosti."}],
-[["first-item10-acc-some", 10], aj, {s: "Některá hnutí se sebemenší inklinaci ke komunismu čelila předsudkům ze strany společnosti."}],
+[["item16-pos-res", 16], aj, {s: {html: "<p>Věra je sommelierka a dlouhodobě sleduje, jak se projevují výrobní postupy na kvalitě vín. V rozhovoru s kolegyní pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Vína se sebemenším náznakem oxidace často mívají výraznou změnu aromatu.</em></p>"}}],
+[["item16-pos-sco", 16], aj, {s: {html: "<p>Věra je sommelierka a dlouhodobě sleduje, jak se projevují výrobní postupy na kvalitě vín. V rozhovoru s kolegyní pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Vína s výrazným náznakem oxidace často mívají sebemenší změnu aromatu.</em></p>"}}],
+[["item16-neg-res", 16], aj, {s: {html: "<p>Věra je sommelierka a dlouhodobě sleduje, jak se projevují výrobní postupy na kvalitě vín. V rozhovoru s kolegyní pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Vína se sebemenším náznakem oxidace často nemívají výraznou změnu aromatu.</em></p>"}}],
+[["item16-neg-sco", 16], aj, {s: {html: "<p>Věra je sommelierka a dlouhodobě sleduje, jak se projevují výrobní postupy na kvalitě vín. V rozhovoru s kolegyní pronese následující větu, která shrnuje její dlouhodobou zkušenost:</p><p><em>Vína s výrazným náznakem oxidace často nemívají sebemenší změnu aromatu.</em></p>"}}],
 
-[["first-item11-acc-all", 11], aj, {s: "Všechny ústavy se sebemenším rozpočtem na výzkum vykázaly mnoho objevů a publikací."}],
-[["first-item11-acc-most", 11], aj, {s: "Většina ústavů se sebemenším rozpočtem na výzkum vykázala mnoho objevů a publikací."}],
-[["first-item11-acc-some", 11], aj, {s: "Některé ústavy se sebemenším rozpočtem na výzkum vykázaly mnoho objevů a publikací."}],
-
-[["first-item12-acc-all", 12], aj, {s: "Všichni zemědělci se sebemenší újmou na úrodě vybíjeli sarančata zakázanými chemickými látkami."}],
-[["first-item12-acc-most", 12], aj, {s: "Většina zemědělců se sebemenší újmou na úrodě vybíjela sarančata zakázanými chemickými látkami."}],
-[["first-item12-acc-some", 12], aj, {s: "Někteří zemědělci se sebemenší újmou na úrodě vybíjeli sarančata zakázanými chemickými látkami."}],
-
-[["first-item13-acc-all", 13], aj, {s: "Všichni spisovatelé se sebemenším sledováním na sítích dorazili na veletrh krásné literatury."}],
-[["first-item13-acc-most", 13], aj, {s: "Většina spisovatelů se sebemenším sledováním na sítích dorazila na veletrh krásné literatury."}],
-[["first-item13-acc-some", 13], aj, {s: "Někteří spisovatelé se sebemenším sledováním na sítích dorazili na veletrh krásné literatury."}],
-
-[["first-item14-acc-all", 14], aj, {s: "Všechny ústavy se sebemenším rozpočtem na výzkum vykázaly mnoho objevů a publikací."}],
-[["first-item14-acc-most", 14], aj, {s: "Většina ústavů se sebemenším rozpočtem na výzkum vykázala mnoho objevů a publikací."}],
-[["first-item14-acc-some", 14], aj, {s: "Některé ústavy se sebemenším rozpočtem na výzkum vykázaly mnoho objevů a publikací."}],
-
-[["first-item15-acc-all", 15], aj, {s: "Všechny herečky se sebemenším talentem na zpěv toužily získat muzikálovou roli."}],
-[["first-item15-acc-most", 15], aj, {s: "Většina hereček se sebemenším talentem na zpěv toužila získat muzikálovou roli."}],
-[["first-item15-acc-some", 15], aj, {s: "Některé herečky se sebemenším talentem na zpěv toužily získat muzikálovou roli."}],
-
-[["first-item16-acc-all", 16], aj, {s: "Všechny političky se sebemenším zájmem o rovnoprávnost prosazovaly potrestání jedné konkrétní osoby."}],
-[["first-item16-acc-most", 16], aj, {s: "Většina političek se sebemenším zájmem o rovnoprávnost prosazovala potrestání jedné konkrétní osoby."}],
-[["first-item16-acc-some", 16], aj, {s: "Některé političky se sebemenším zájmem o rovnoprávnost prosazovaly potrestání jedné konkrétní osoby."}],
-
-[["first-item17-acc-all", 17], aj, {s: "Všechna děvčata se sebemenší bolestí v srdci zkusila někdy napsat dojemnou báseň."}],
-[["first-item17-acc-most", 17], aj, {s: "Většina děvčat se sebemenší bolestí v srdci zkusila někdy napsat dojemnou báseň."}],
-[["first-item17-acc-some", 17], aj, {s: "Některá děvčata se sebemenší bolestí v srdci zkusila někdy napsat dojemnou báseň."}],
-
-[["first-item18-acc-all", 18], aj, {s: "Všechny děti se sebemenší úctou k seniorům navštívily během prázdnin domov důchodců."}],
-[["first-item18-acc-most", 18], aj, {s: "Většina dětí se sebemenší úctou k seniorům navštívila během prázdnin domov důchodců."}],
-[["first-item18-acc-some", 18], aj, {s: "Některé děti se sebemenší úctou k seniorům navštívily během prázdnin domov důchodců."}],
-
-["first-filler1-good", aj, {s: "Letošní pořadatelé festivalu počítali s menší účastí a proto snížili rozpočet." }],
-["first-filler2-good", aj, {s: "Chlapci stáli v pokoji, kde už se nacházela pouze skříň, a prohlíželi si popraskané stěny." }],
-["first-filler3-good", aj, {s: "Jeden soutěžící s nejvyšším počtem bodů vyhraje celou hru a získá zlatý pohár." }],
-["first-filler4-good", aj, {s: "Tento kurz, ve kterém uspělo padesát procent studentů, je nejtěžším kurzem v naší nabídce." }],
-["first-filler5-good", aj, {s: "Mnoho lidí, kteří přežili tragickou autonehodu, částečně přišlo o sluch."}],
-["first-filler6-good", aj, {s: "Všechny ženy, se kterými Naďa šla do čajovny, měly více či méně problematickou minulost." }],
-["first-filler7-bad", aj, {s: "Svoje domácí zmrzlina s trochou slaného karamelu je skvělý dezert na dnešní oběd." }],
-["first-filler8-bad", aj, {s: "Každý student, který nebyl zrovna u zkoušky, se sešel na náměstí Svobody." }],
-["first-filler9-bad", aj, {s: "Moje prababička, která už je velmi stará, si pamatuje, co jí nikdo řekne." }],
-["first-filler10-bad", aj, {s: "Až mi ten dokument vytiskl, tak mi ji prosím polož na ten nejmenší stůl." }],
-["first-filler11-bad", aj, {s: "Žádný malíř bude hladovět, pokud si každá domácnost koupí dva obrazy." }],
-["first-filler12-bad", aj, {s: "Rostliny s dlouhými kořeny sobě špatně vykopávají ze země." }],
-["first-filler13-good", aj, {s: "Podnikatelky s nadlidskou pílí dokázaly svoje firmy dostat na horní konec žebříčku." }],
-["first-filler14-good", aj, {s: "Dvě zvířata s trochou roztomilosti jsme si natočili a zbytek zvířat jsme ignorovali."}],
-["first-filler15-good", aj, {s: "Mnoho dětí na místní hřiště přestalo chodit už měsíc po jeho slavnostním otevření." }],
-["first-filler16-bad", aj, {s: "Krápník, který roste od země nahoru, sebe názvuje stalagmit." }],
-["first-filler17-bad", aj, {s: "Ten žádný balvan, který nám stojí v cestě, se nám podařilo odvalit a mohli jsme pokračovat."}],
-["first-filler18-bad", aj, {s: "Nejšikovnější dítě trenér pochlubil tím, že umí velmi dobře lyžovat." }],
-
-["practice-two-before", "Message", {continueMessage: "Klikněte zde pro pokračování experimentu", html: ["div", ["p", "Zde končí první část experimentu. Klikněte níže pro vysvětlení druhé části experimentu."]]}],
-
- ["practice-two", aj, {s: {html: "<center><table><table cellspacing=100><tr><td><img style=\"display:block;max-width:350px;max-height:350px;width: auto;height: auto;\" src=\"https://github.com/MojmirDocekal/jan_2019_brn_vie/blob/master/1_nd_wrong.jpg?raw=true\"></td><td><img style=\"display:block;max-width:400px;max-height:400px;width: auto;height: auto;\" src=\"https://github.com/MojmirDocekal/jan_2019_brn_vie/blob/master/1_non-distributive.jpg?raw=true\"></td></table></center><b>Nacházíte se v přípravné fázi druhé části experimentu. Bude vám vysvětlen kontext a procedura.</p><center>Kontext: Každá situace, kterou budete v experimentu posuzovat, začíná tím, že v horní části obrázku se nachází 12 tvarů. Klára je pokaždé musí rozmístit do dvou boxů dole tak, aby některé tvary byly v levém boxu a ty ostatní v pravém. V každém boxu se může vyskytnout směs různých tvarů a/nebo barev.</p>Dolní část každého obrázku (pod šipkou) představuje situaci, kdy tvary už byly rozmístěny do boxů. Boxy mají stěny, skrze které lze vidět obrys objektů uvnitř, ale ne jejich barvu. Klára navíc boxy natřela na černo, takže do jednoho boxu je vidět jen částečně a do druhého není vidět vůbec.<center><p> Poté, co Klára rozmístí tvary do boxů, do místnosti vejde Boris. Boris ví, kolik tvarů jakých barev Klára musela uklidit, ale neviděl ji při tom. Boris vidí pouze situaci v dolní polovině obrázku a komentuje ji. Vaším úkolem bude posoudit, zda si Boris vytváří správné logické úsudky o počtech a barvách tvarů v boxech.<p><i>Příkladový úkol:</i>Boris se dívá na boxy a říká: <i>V pravém boxu jsou tři hvězdy. Z Borisova pozorování plyne, že v levém boxu mohou být maximálně tři hvězdy.</i></p></p>Úsudek je správný. Boris ví, že celkový počet hvězd je šest. Pokud ve viditelné části boxu jsou tři hvězdy, zbývající hvězdy jsou buď v černě natřené části boxu nebo ve druhém boxu. Zbývající hvězdy jsou tři, takže v levém boxu nemůže být více než tři hvězdy. Správná odpověď zní <i>ANO</i>. Klikněte na ni.</center>"}, hasCorrect: 0}],
-             
-["practice-two", aj, {s: {html: "<center><table><table cellspacing=100><tr><td><img style=\"display:block;max-width:400px;max-height:400px;width: auto;height: auto;\" src=\"https://github.com/MojmirDocekal/jan_2019_brn_vie/blob/master/9_non-d_f.jpg?raw=true\"></td><td><img style=\"display:block;max-width:370px;max-height:370px;width: auto;height: auto;\" src=\"https://github.com/MojmirDocekal/jan_2019_brn_vie/blob/master/9_nd.jpg?raw=true\"></td></table></center>Kontext: Děti si hrály na půdě, kde našly staré rozbité hračky. Byly z toho smutné. Přinesly je ukázat tatínkovi a prosily ho, zda by mohl rozbité hračky opravit.</p><center><p>Boris se dívá na boxy a říká: <i>Každé dítě přineslo jednu hračku. </i></p></p>Věta je adekvátní vůči kontextu a zároveň odpovídá pravému obrázku, neboť na něm má každé dítě v ruce jednu hračku. Na levém obrázku nese hračku pouze holčička, zatímco chlapeček má prázdné ruce. Odpověď <i>ani jeden</i> zde není adekvátní, protože se k větě hodí obrázek napravo. Klikněte tedy na odpověď <i>pravý</i>.</center>"}, hasCorrect: 2}],
-            
-["practice-two", aj, {s: {html: "<center><table><table cellspacing=100><tr><td><img style=\"display:block;max-width:450px;max-height:450px;width: auto;height: auto;\" src=\"https://github.com/MojmirDocekal/jan_2019_brn_vie/blob/master/3_d.jpg?raw=true\"></td><td><img style=\"display:block;max-width:610px;max-height:610px;width: auto;height: auto;\" src=\"https://github.com/MojmirDocekal/jan_2019_brn_vie/blob/master/3_d_f.jpg?raw=true\"></td></table></center>Kontext: Alena přišla navštívit svoji sestru Mariku. Alena byla celý týden na dovolené, a proto jí uniklo několik dílů oblíbeného detektivního seriálu. Marika jí proto stručně vylíčila, co se tam odehrálo.</p><center><p>Boris se dívá na boxy a říká: <i>Marika řekla, že policista Jan zatkl dva zloděje. </i></p></p>Věta je sice adekvátní vůči kontextu, ale ani jeden obrázek dané větě neodpovídá. Levý obrázek větě neodpovídá, protože jsou na něm dva policisté a každý z nich zatkl dva zloděje. Vyslovená věta ovšem zmiňuje pouze jednoho policistu. Pravý obrázek také neodpovídá, protože jsou na něm dva policisté a každý z nich zatkl jednoho zloděje. Ani jeden obrázek tedy neodpovídá větě. Zvolte možnost <i>ani jeden</i>.</center>"}, hasCorrect: 1}],             
-
-          ["practice-two-over", "Message", {continueMessage: "Klikněte zde pro pokračování experimentu", html: ["div", ["p", "Zde končí přípravná část experimentu. Klikněte níže pro vstup do experimentu."]]}],
-
-/*
-[["followup-item41-NR", 41], aj, {s: {html: "<p>Nový bača v Tatrách nechce, aby se ztratila jediná ovce.</p><p>Nový bača v Tatrách chce, aby se neztratila jediná ovce.</p>"}, as: ["Druhá věta vyplývá z první", "Druhá věta nevyplývá z první"], presentAsScale: false, leftComment: null, rightComment: null}],
-*/
-
-[["second-item19-UE-all", 19], aj, {s: {html: "Kontext: Klára rozmístila tvary do obou boxů. Pak přichází Boris.<div style=\"text-align:center;\"><img style=\"display:block;max-width:400px;max-height:300px;width:auto;height:auto;margin:0 auto;\" src=\"https://github.com/Rh-Hor/Exp_Dec-2025/blob/main/1-all.png?raw=true\"></div><center>Boris se dívá na boxy a říká:</p> 1. <i>Všechny trojúhelníky jsou v levém boxu.</i></p></p>Z Borisova pozorování plyne, že:<p> 2. <i>Všechny tvary jsou v levém boxu.</i></p> </center>"}, as: ["Pravdivost Borisovy první věty zaručuje pravdivost druhé věty", "Pravdivost Borisovy první věty nezaručuje pravdivost druhé věty."], presentAsScale: false, leftComment: null, rightComment: null}],
-
-[["second-item19-UE-most", 19], aj, {s: {html: "Kontext: Klára rozmístila tvary do obou boxů. Pak přichází Boris.<div style=\"text-align:center;\"><img style=\"display:block;max-width:700px;max-height:300px;width:auto;height:auto;margin:0 auto;\" src=\"https://github.com/Rh-Hor/Exp_Dec-2025/blob/main/1-most.png?raw=true\"></div><center>Boris se dívá na boxy a říká:</p> 1. <i>Většina trojúhelníků je v levém boxu.</i></p></p>Z Borisova pozorování plyne, že: <p> 2. <i>Většina tvarů je v levém boxu. </i></p> </center>"}, as: ["Pravdivost Borisovy první věty zaručuje pravdivost druhé věty", "Pravdivost Borisovy první věty nezaručuje pravdivost druhé věty."], presentAsScale: false, leftComment: null, rightComment: null}],
-
-[["second-item19-UE-some", 19], aj, {s: {html: "Kontext: Klára rozmístila tvary do obou boxů. Pak přichází Boris.<div style=\"text-align:center;\"><img style=\"display:block;max-width:400px;max-height:300px;width:auto;height:auto;margin:0 auto;\" src=\"https://github.com/Rh-Hor/Exp_Dec-2025/blob/main/1-some.png?raw=true\"></div><center>Boris se dívá na boxy a říká:</p> 1. <i>Některé trojúhelníky jsou v levém boxu.</i></p></p>Z Borisova pozorování plyne, že: <p> 2.<i> Některé tvary jsou v levém boxu.</i></p></center>"}, as: ["Pravdivost Borisovy první věty zaručuje pravdivost druhé věty", "Pravdivost Borisovy první věty nezaručuje pravdivost druhé věty."], presentAsScale: false, leftComment: null, rightComment: null}],
-
-["second-filler1-bad", aj, {s: {html: "Kontext: Klára rozmístila tvary do obou boxů. Pak přichází Boris.<div style=\"text-align:center;\"><img style=\"display:block;max-width:400px;max-height:300px;width:auto;height:auto;margin:0 auto;\" src=\"https://github.com/Rh-Hor/Exp_Dec-2025/blob/main/1-mixed.png?raw=true\"></div><center>Boris se dívá na boxy a říká: <i>Každý fotograf vyfotil obě modelky.</i></p></p>Z Borisova pozorování plyne, že</center>"}, as: ["Pravdivost Borisovy první věty zaručuje pravdivost druhé věty", "Pravdivost Borisovy první věty nezaručuje pravdivost druhé věty."], presentAsScale: false, leftComment: null, rightComment: null}],  
+["filler1", aj, {s: {html: "<p>Martin je školitel komunikačních dovedností a dlouhodobě sleduje, jak lidé zvládají veřejná vystoupení. V rozhovoru s kolegyní pronese následující větu, která shrnuje jeho zkušenost:</p><p><em>Lidé s malou zkušeností s veřejným vystupováním často nemívají žádnou reakci od publika.</em></p>"}}],
+["filler2", aj, {s: {html: "<p>Petr je amatérský astronom a dlouhodobě sleduje, jaký vliv mají druhy dalekohledů na pozorování hvězd. V rozhovoru s kolegou pronese následující větu, která shrnuje jeho zkušenost:</p><p><em>Dalekohledy s velkou čočkou často mívají žádné problémy s pozorováním hvězd.</em></p>"}}],
+["filler3", aj, {s: {html: "<p>Alena je personalistka a dlouhodobě sleduje, jak uchazeči zvládají pracovní pohovory. V rozhovoru s kolegyní pronese následující větu, která shrnuje její zkušenost:</p><p><em>Kandidáti s malou praxí často nemívají žádnou šanci postoupit do dalšího kola.</em></p>"}}],
+["filler4", aj, {s: {html: "<p>Tereza je redaktorka kulturní rubriky a dlouhodobě sleduje návštěvnost menších galerií. V rozhovoru s kolegou pronese následující větu, která shrnuje její zkušenost:</p><p><em>Galerie s nízkým rozpočtem často mívají žádnou návštěvnost.</em></p>"}}],
+["filler5", aj, {s: {html: "<p>Ivana je specialistka na zákaznickou podporu a dlouhodobě sleduje, jak lidé používají internetové bankovnictví. V rozhovoru s kolegyní pronese následující větu, která shrnuje její zkušenost:</p><p><em>Klienti s malou zkušeností s internetovým bankovnictvím často nemívají žádnou důvěru v mobilní platby.</em></p>"}}],
+["filler6", aj, {s: {html: "<p>David je analytik zdravotních dat a dlouhodobě sleduje průběh běžných virových onemocnění. V rozhovoru s kolegou pronese následující větu, která shrnuje jeho zkušenost:</p><p><em>Pacienti s mírnými příznaky často mívají žádnou odezvu na léčbu.</em></p>"}}],
+["filler7", aj, {s: {html: "<p>Lenka je koordinátorka call centra a dlouhodobě sleduje, jak noví operátoři zvládají první týdny v provozu. V rozhovoru s kolegyní pronese následující větu, která shrnuje její zkušenost:</p><p><em>Operátoři bez předchozí praxe často nemívají žádnou jistotu při řešení stížností.</em></p>"}}],
+["filler8", aj, {s: {html: "<p>Milan je technik v tiskárně a dlouhodobě sleduje, jak kvalita podkladů ovlivňuje výsledek tisku. V rozhovoru s kolegou pronese následující větu, která shrnuje jeho zkušenost:</p><p><em>Zakázky s nekvalitní předlohou často mívají žádné chyby v tisku.</em></p>"}}],
+["filler9", aj, {s: {html: "<p>Petr se dlouhodobě věnuje studiu kvality výrobků a sleduje, jak se projevují vady na různých typech zboží. V rozhovoru s kolegou pronese následující větu, která shrnuje jeho zkušenost:</p><p><em>Auta s vícenásobnou kontrolou kvality často nemívají ani jednu vadu.</em></p>"}}],
+["filler10", aj, {s: {html: "<p>Soňa je nutriční poradkyně a dlouhodobě sleduje, jak stravovací návyky ovlivňují zdraví jejích klientů. V rozhovoru s kolegyní pronese následující větu, která shrnuje její zkušenost:</p><p><em>Klienti s vyváženou stravou často mívají ani jednu zdravotní potíž.</em></p>"}}],
+["filler11", aj, {s: {html: "<p>Pavel je trenér plavání a dlouhodobě sleduje, jak technika ovlivňuje výsledky závodníků. V rozhovoru s kolegou pronese následující větu, která shrnuje jeho zkušenost:</p><p><em>Závodníci s dobře nacvičenou technikou často nemívají ani jednu chybu v závodě.</em></p>"}}],
+["filler12", aj, {s: {html: "<p>Monika je účetní a dlouhodobě sleduje, jak pečlivost pracovníků ovlivňuje chybovost ve výkazech. V rozhovoru s kolegyní pronese následující větu, která shrnuje její zkušenost:</p><p><em>Pracovníci s vysokou mírou pečlivosti často mívají ani jednu chybu ve výkazech.</em></p>"}}],
+["filler13", aj, {s: {html: "<p>Radek je IT správce a dlouhodobě sleduje, jak pravidelná záloha dat ovlivňuje ztrátu souborů u zaměstnanců. V rozhovoru s kolegou pronese následující větu, která shrnuje jeho zkušenost:</p><p><em>Zaměstnanci s pravidelnou zálohou dat často nemívají ani jednu ztrátu důležitých souborů.</em></p>"}}],
+["filler14", aj, {s: {html: "<p>Hana je vedoucí skladu a dlouhodobě sleduje, jak důkladná inventura ovlivňuje výskyt nesrovnalostí. V rozhovoru s kolegyní pronese následující větu, která shrnuje její zkušenost:</p><p><em>Sklady s důkladnou inventurou často mívají ani jednu nesrovnalost ve výkazech.</em></p>"}}],
+["filler15", aj, {s: {html: "<p>Věra je zahradní architektka a dlouhodobě sleduje, jak pravidelná údržba ovlivňuje výskyt škůdců na rostlinách. V rozhovoru s kolegyní pronese následující větu, která shrnuje její zkušenost:</p><p><em>Zahrady s pravidelnou údržbou často nemívají ani jednoho škůdce na rostlinách.</em></p>"}}],
+["filler16", aj, {s: {html: "<p>Jakub je správce bytového domu a dlouhodobě sleduje, jak kvalitní rekonstrukce ovlivňují výskyt poruch v bytech. V rozhovoru s kolegou pronese následující větu, která shrnuje jeho zkušenost:</p><p><em>Byty po kvalitní rekonstrukci často mívají ani jednu poruchu na instalaci.</em></p>"}}],
 
 ];
